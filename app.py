@@ -36,11 +36,11 @@ def main():
     
     # Header
     st.markdown('<h1 class="main-header">🧠 Brain Tumor Detection AI</h1>', unsafe_allow_html=True)
-    st.markdown('<p style="text-align: center; font-size: 1.2rem; color: #666;">Advanced CNN-based MRI Classification System with 96% Accuracy</p>', unsafe_allow_html=True)
+    st.markdown('<p style="text-align: center; font-size: 1.2rem;">Advanced CNN-based MRI Classification System with 96% Accuracy</p>', unsafe_allow_html=True)
     
     st.markdown("---")
     
-    # Welcome section
+    # Welcome section - Metric Cards
     col1, col2, col3 = st.columns(3)
     
     with col1:
@@ -159,21 +159,20 @@ def main():
         
         st.markdown("---")
         
-        st.image("https://via.placeholder.com/150x150.png?text=Brain+AI", width=150)
         st.markdown("### 🧠 Navigation")
         st.info("Use the pages menu above to navigate between different features.")
         
         st.markdown("---")
         st.markdown("### 📊 System Status")
-        st.success("✅ Model Loaded")
+        st.success("✅ Model Ready")
         st.success("✅ System Online")
         
         st.markdown("---")
         st.markdown("### 📞 Support")
         st.markdown("""
-        - 📧 Email: support@braintumordetection.ai
-        - 📖 [Documentation](https://github.com/yourusername/brain-tumor-detection)
-        - 🐛 [Report Issues](https://github.com/yourusername/brain-tumor-detection/issues)
+        - 📧 Email: support@brainai.com
+        - 📖 [Documentation](https://github.com/kush-rc/brain-tumor-detection)
+        - 🐛 [Report Issues](https://github.com/kush-rc/brain-tumor-detection/issues)
         """)
         
         st.markdown("---")
