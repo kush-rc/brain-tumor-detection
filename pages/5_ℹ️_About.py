@@ -267,10 +267,9 @@ def main():
     st.markdown("""
     ### Development Team
     
-    - **Lead Developer**: Your Name
-    - **ML Engineer**: Team Member
-    - **Medical Advisor**: Dr. Medical Professional
-    - **UI/UX Designer**: Designer Name
+    - **Lead Developer**: Kush Chhunchha
+    - **ML Engineer**: Kush Chhunchha
+    - **UI/UX Designer**: Kush Chhunchha
     
     ### Dataset
     
