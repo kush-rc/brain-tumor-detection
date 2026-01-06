@@ -1,0 +1,112 @@
+# ========================================
+# Brain Tumor Detection System - .gitignore
+# ========================================
+
+# ============ SENSITIVE DATA ============
+# NEVER commit these!
+.env
+.env.local
+.env.production
+.streamlit/secrets.toml
+config/credentials.json
+config/secrets.yml
+api_keys.json
+*.key
+*.pem
+
+# ============ USER DATA ============
+# Patient and user information (HIPAA)
+data/*.csv
+data/*.json
+data/patients.csv
+data/predictions_history.csv
+data/users.csv
+!data/.gitkeep
+
+# ============ LARGE MODEL FILES ============
+# GitHub limit is 100MB - store elsewhere
+# models/*.h5
+# models/*.pkl
+# models/*.pth
+# models/*.pt
+# models/*.onnx
+# *.h5
+# !models/README.md
+
+# ============ PYTHON ============
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============ VIRTUAL ENVIRONMENT ============
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# ============ IDE ============
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ============ JUPYTER ============
+.ipynb_checkpoints
+*.ipynb
+
+# ============ TEMPORARY FILES ============
+temp/
+tmp/
+*.tmp
+*.log
+*.bak
+*.backup
+
+# ============ UPLOADS & REPORTS ============
+uploads/
+images/
+reports/
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.gif
+!assets/*.png
+!assets/*.jpg
+
+# ============ OS FILES ============
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ============ CACHE ============
+.cache/
+*.cache
+.pytest_cache/
+
+# ============ DATABASES ============
+*.db
+*.sqlite
+*.sqlite3
