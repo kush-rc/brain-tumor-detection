@@ -1,50 +1,46 @@
 """
 Theme switcher utility for light/dark mode
+DEFAULT: Dark Theme
 """
 
 import streamlit as st
 
 def init_theme():
-    """Initialize theme in session state"""
+    """Initialize theme in session state - defaults to DARK"""
     if 'theme' not in st.session_state:
-        st.session_state.theme = 'light'
+        st.session_state.theme = 'dark'  # Default to dark theme
 
 def toggle_theme():
     """Toggle between light and dark theme"""
     if st.session_state.theme == 'light':
-        # Set dark theme
-        st._config.set_option('theme.base', 'dark')
-        st._config.set_option('theme.backgroundColor', '#0e1117')
-        st._config.set_option('theme.primaryColor', '#667eea')
-        st._config.set_option('theme.secondaryBackgroundColor', '#262730')
-        st._config.set_option('theme.textColor', '#fafafa')
         st.session_state.theme = 'dark'
     else:
-        # Set light theme
-        st._config.set_option('theme.base', 'light')
-        st._config.set_option('theme.backgroundColor', '#ffffff')
-        st._config.set_option('theme.primaryColor', '#667eea')
-        st._config.set_option('theme.secondaryBackgroundColor', '#f0f2f6')
-        st._config.set_option('theme.textColor', '#262730')
         st.session_state.theme = 'light'
     
     st.rerun()
 
 def get_theme_icon():
     """Get icon based on current theme"""
-    if st.session_state.get('theme', 'light') == 'light':
+    if st.session_state.get('theme', 'dark') == 'light':
         return "🌙"  # Moon for switching to dark
     else:
         return "☀️"  # Sun for switching to light
 
 def apply_custom_css():
     """Apply custom CSS that works with both themes"""
-    theme = st.session_state.get('theme', 'light')
+    theme = st.session_state.get('theme', 'dark')  # Default to dark
     
     if theme == 'dark':
         # Dark theme CSS
         st.markdown("""
         <style>
+            /* Force dark theme */
+            :root {
+                --background-color: #0e1117;
+                --secondary-background-color: #262730;
+                --text-color: #fafafa;
+            }
+            
             .main-header {
                 font-size: 3rem;
                 font-weight: bold;
@@ -131,7 +127,7 @@ def theme_toggle_button():
     init_theme()
     
     icon = get_theme_icon()
-    theme_name = "Dark Mode" if st.session_state.theme == 'light' else "Light Mode"
+    theme_name = "Light Mode" if st.session_state.theme == 'dark' else "Dark Mode"
     
     if st.sidebar.button(f"{icon} {theme_name}", use_container_width=True, key="theme_toggle"):
         toggle_theme()
