@@ -299,7 +299,6 @@ def main():
     Version: 1.0.0
     Release Date: January 2026
     Last Updated: January 6, 2026
-    License: MIT License
     Repository: github.com/kush-rc/brain-tumor-detection
     """)
     
